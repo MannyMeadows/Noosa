@@ -4,8 +4,143 @@
   <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
 </head>
 <body>
-<a-scene>
+  <a-scene>
+    <a-asset>
+    </a-asset>
   <a-box color="#FF0000" width="2" height="2" depth="2"></a-box>
   </a-scene>
+  <script>
+    var maze;
+    var pos;
+    var cam = document.getElementById('camera');
+    cam.addEventListener('collide', function (e) {
+      if(e.detail.body.el.getAttribute('id')=='price'){
+        clearInterval(counter);
+        var winner = document.getElementById('winner');
+        var attr_text = winner.getAttribute('text');
+        attr_text.text = "You win!!";
+        winner.setAttribute('text', attr_text);
+      }
+    });
+    var seconds = 0;
+    var counter;
+    function init(width,height){
+      clearInterval(counter);
+      maze = new Array(height);
+      for (var i = 0; i < maze.length; i++){
+        maze[i] = [].repeat(0, width);
+      }
+      buildPath(maze,[0,0]);
+      maze = [[1,0,1,1,0,1,1,1,1,0,0,1,1,1],[1,1,0,1,1,1,0,0,1,1,1,0,1,0],[0,1,1,0,1,0,1,1,0,0,1,0,1,1],[1,0,1,0,1,1,1,0,1,0,1,1,0,1],[1,1,1,0,1,0,1,0,1,1,0,1,0,1],[0,1,0,1,0,1,1,0,0,1,0,1,0,1],[1,1,0,1,1,1,0,1,1,1,1,1,1,1],[0,1,0,1,0,1,0,1,0,0,0,0,0,1],[1,1,0,1,0,1,0,0,1,1,1,1,1,0],[1,0,1,0,0,1,1,1,1,0,0,0,1,1],[1,1,1,1,1,0,1,0,0,1,1,1,0,1],[0,0,0,0,1,0,1,1,1,1,0,1,0,1],[1,1,1,0,1,1,0,1,0,0,0,1,0,1],[0,1,0,0,1,0,1,0,1,1,1,0,1,1],[1,1,0,1,1,0,1,1,1,0,1,1,1,0],[1,0,1,1,0,1,0,0,1,0,1,0,1,0],[1,0,1,0,1,1,1,1,1,0,0,1,1,1],[1,1,1,1,1,0,0,1,0,1,1,1,0,1]];
+      paintMaze(maze);
+      seconds = 0;
+      counter = setInterval(function(){
+        var board = document.getElementById('board');
+        var attr_text = board.getAttribute('text');
+        attr_text.text = seconds++;
+        board.setAttribute('text', attr_text);
+      },1000);
+      var neighbors = [];
+      var position = cam.getAttribute('position');
+      pos = [((position.x/3)+(width-1)*.5),((position.z/3)+(height-1)*.5)];
+      rot = 0;
+      automove = function(){
+        position = cam.getAttribute('position');
+        neighbors = lookNeighbors(maze,pos,rot);
+        if(neighbors.length == 0){
+          if(rot == 0){
+            pos = [pos[0]+1,pos[1]];
+          }else if(rot == 90){
+            pos = [pos[0],pos[1]+1];
+          }else if(rot == 180){
+            pos = [pos[0]-1,pos[1]];
+          }else if(rot == 270){
+            pos = [pos[0],pos[1]-1];
+          }
+          rot += 180;
+          rot = rot % 360;
+          rotate(1,function(){
+            rotate(1,function(){
+              move([(3*(pos[1]-(width-1)*.5)),(3*(pos[0]-(height-1)*.5))],function(){
+                setTimeout(automove,500);
+              });
+            });
+          });
+        }else{
+          var next = neighbors[0];
+          if(rot == 0){
+            //pos = [pos[0]+1,pos[1]];
+          }else if(rot == 90){
+            //pos = [pos[0],pos[1]+1];
+          }else if(rot == 180){
+            console.log(next);
+            console.log(pos);
+            if(next[1] == pos[1]){
+              rotate(next[0] - pos[0],function(){
+                pos = next;
+                move([(3*(pos[1]-(width-1)*.5)),(3*(pos[0]-(height-1)*.5))],function(){
+                  setTimeout(automove,500);
+                });
+              });
+            }else{
+              pos = next;
+              move([(3*(pos[1]-(width-1)*.5)),(3*(pos[0]-(height-1)*.5))], function(){
+                setTimeout(automove,500);
+              });
+            }
+          }else if(rot == 270){
+            //pos = [pos[0],pos[1]-1];
+          }
+        }
+      };
+      automove();
+    }
+    init(14,18);
+    function rotate(direction, callback){
+      var rotation = cam.getAttribute('rotation');
+      if(direction == 1){
+        rotation.y+=2;
+      }else if(direction == -1){
+        rotation.y-=2;
+      }
+      if(rotation.y == 360){
+        rotation.y = 0;
+      }
+      if(rotation.y%90 != 0){
+        setTimeout(function(){rotate(direction,callback)},20);
+      }else{
+        if(rotation.y < 0){
+          rotation.y = 360 + rotation.y;
+        }
+        if(typeof callback != 'undefined'){
+          callback();
+        }
+      }
+      cam.setAttribute('rotation', rotation);
+    }
+    function move(pos, callback){
+      var end = false;
+      var actual = cam.getAttribute('position');
+      if(actual.x.toFixed(2) > pos[0]){
+        actual.x = actual.x - .1;
+      }else if(actual.x.toFixed(2) < pos[0]){
+        actual.x = actual.x + .1;
+      }else if(actual.z.toFixed(2) > pos[1]){
+        actual.z = actual.z - .1;
+      }else if(actual.z.toFixed(2) < pos[1]){
+        actual.z = actual.z + .1;
+      }else{
+        end = true;
+      }
+      cam.setAttribute('position', actual);
+      if(end){
+        if(typeof callback != 'undefined'){
+          callback();
+        }
+      }else{
+        setTimeout(function(){move(pos, callback)},20);
+      }
+    }
+    </script>
 </body>
 </html>
