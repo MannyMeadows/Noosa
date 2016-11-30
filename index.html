@@ -10,16 +10,15 @@
     <!-- add spin animation to objects when selectd or hovered over with cursor -->
 </head>
 <body>
-  <a-scene physics>
-    <a-entity camera
-                universal-controls
-                kinematic-body
-                position="0 1.764 0">
-    </a-entity>
-  <a-assets>
-    <a-asset-item id="shop" src="/Noosa/models/Pandora-shop.DAE"></a-asset-item>
-  </a-assets>
+  <a-scene physics="debug: true">
+    <a-assets>
+      <a-asset-item id="shop" src="/Noosa/models/Pandora-shop.DAE"></a-asset-item>
+    </a-assets>
   <a-entity collada-model="#shop"></a-entity>
+    <a-box color="#39BB82"
+             width="15" height="5" depth="3"
+             position="8 2.5 -5"
+             static-body></a-box>
 </a-scene>
 </body>
 </html>
