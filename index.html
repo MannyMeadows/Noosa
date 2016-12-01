@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <html>
 <head>
-  <script src="/Noosa/aframe-extras.js"></script>
+  <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
     <!-- find and add collision component for walls & floor -->
     <!-- add model entities via OBJ method and use realistic textures - try to use metalness and roughness values -->
     <!-- find and add google cardboard navigation component - teleport preferred -->
@@ -10,15 +10,11 @@
     <!-- add spin animation to objects when selectd or hovered over with cursor -->
 </head>
 <body>
-  <a-scene physics="debug: true">
+  <a-scene>
     <a-assets>
       <a-asset-item id="shop" src="/Noosa/models/Pandora-shop.DAE"></a-asset-item>
     </a-assets>
   <a-entity collada-model="#shop"></a-entity>
-    <a-box color="#39BB82"
-             width="15" height="5" depth="3"
-             position="8 2.5 -5"
-             static-body></a-box>
 </a-scene>
 </body>
 </html>
