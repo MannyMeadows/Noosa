@@ -1,17 +1,19 @@
 <!DOCTYPE>
-<html>
-<head>
-  <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
     <!-- find and add collision component for walls & floor -->
     <!-- add model entities via OBJ method and use realistic textures - try to use metalness and roughness values -->
     <!-- find and add google cardboard navigation component - teleport preferred -->
     <!-- add href component to add links to clickable models -->
     <!-- load uraniom avatar as child of camera -->
     <!-- add spin animation to objects when selectd or hovered over with cursor -->
-</head>
-<body>
-  <a-scene>
-  <a-box color="#03A9F4" width="2" height="4" depth="2"></a-box>
-  </a-scene>
-</body>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-box color="#6173F4" opacity="0.8" depth="2"></a-box>
+      <a-sphere radius="2" src="texture.png" position="1 1 0"></a-sphere>
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+  </body>
 </html>
