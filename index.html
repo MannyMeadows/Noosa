@@ -16,8 +16,11 @@
       <a-plane rotation="-90 0 0" width="54" height="54" color="#7BC8A4" static-body></a-plane>
       <!-- Sky -->
       <a-sky color="#ECECEC"></a-sky>
-      <!-- Wall collider -->
-      <a-entity position="-1 0.5 1" collada-model="url(https://mannymeadows.github.io/Noosa/models/walls-test.DAE)" static-body></a-entity>
+      <!-- Wall collider -->      
+      <a-entity obj-model="obj: 
+                url(https://mannymeadows.github.io/Noosa/models/Walls-test.obj); 
+                mtl: url(https://mannymeadows.github.io/Noosa/models/Walls-test.mtl)" 
+                static-body></a-entity>
       <!-- Box collider -->
       <a-box position="-1 0.5 1" rotation="0 45 0" width="1" height="1" depth="1"  color="#4CC3D9" static-body></a-box>
       <a-entity position="0 0 6">
