@@ -19,11 +19,12 @@
                 position="0 1.7 0">
       </a-entity>
       <!-- Floor -->
-      <a-plane rotation="-90 0 0" width="34" height="34" color="#7BC8A4" static-body></a-plane>
+      <a-plane rotation="-90 0 0" width="54" height="54" color="#7BC8A4" static-body></a-plane>
       <!-- Sky -->
       <a-sky color="#ECECEC"></a-sky>
       <!-- Walls -->
-      <a-entity static-body collada-model="url(https://mannymeadows.github.io/Noosa/models/walls-test.DAE)"></a-entity>
+      <a-entity position="-1 0.5 1" collada-model="url(https://mannymeadows.github.io/Noosa/models/walls-test.DAE)" static-body></a-entity>
+      <a-box position="-1 0.5 1" rotation="0 45 0" width="1" height="1" depth="1"  color="#4CC3D9"></a-box>
       <a-entity position="0 0 6">
         <a-camera></a-camera>
       </a-entity>
