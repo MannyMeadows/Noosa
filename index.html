@@ -7,7 +7,7 @@
    <body>
     <a-scene physics>
       <a-assets>
-      <a-asset-item id="room-obj" src="https://mannymeadows.github.io/Noosa/models/shop-walls.obj"></a-asset-item>
+      <a-asset-item id="room-obj" src="https://mannymeadows.github.io/Noosa/models/shop-walls.obj" static-body></a-asset-item>
       <a-asset-item id="room-mtl" src="https://mannymeadows.github.io/Noosa/models/shop-walls.mtl"></a-asset-item>
       </a-assets>
         <!-- Player -->
@@ -22,7 +22,7 @@
         <!-- Sky -->
         <a-sky color="#ECECEC"></a-sky>
         <!-- fix static body Wall collider -->      
-        <a-entity scale="0.02 0.02 0.02" obj-model="obj: #room-obj; mtl: room-mtl" static-body></a-entity>
+        <a-entity scale="0.02 0.02 0.02" obj-model="obj: #room-obj; mtl: room-mtl"></a-entity>
         <!-- furniture -->
         <!-- Box collider -->
         <a-entity position="0 0 6">
