@@ -7,8 +7,6 @@
    <body>
     <a-scene physics>
       <a-assets>
-      <a-asset-item id="chair-obj" src="https://mannymeadows.github.io/Noosa/models/riva1920_onelove_obj.obj"></a-asset-item>
-      <a-asset-item id="chair-mtl" src="https://mannymeadows.github.io/Noosa/models/riva1920_onelove_obj.mtl"></a-asset-item>
       <a-asset-item id="room-obj" src="https://mannymeadows.github.io/Noosa/models/shop-walls.obj"></a-asset-item>
       <a-asset-item id="room-mtl" src="https://mannymeadows.github.io/Noosa/models/shop-walls.mtl"></a-asset-item>
       </a-assets>
@@ -25,7 +23,6 @@
         <!-- Wall collider -->      
         <a-entity scale="0.05 0.05 0.05" obj-model="obj: #room-obj; mtl: room-mtl" color="#e2c5c9" static-body></a-entity>
         <!-- furniture -->
-        <a-entity scale="0.05 0.05 0.05" obj-model="obj: #chair-obj; mtl: #chair-mtl"></a-entity>
         <!-- Box collider -->
         <a-box position="-1 0.5 1" rotation="0 45 0" width="1" height="1" depth="1"  color="#4CC3D9" static-body></a-box>
         <a-entity position="0 0 6">
