@@ -12,6 +12,7 @@
       </a-assets>
         <!-- Player -->
         <a-entity camera                
+                universal-controls
                 kinematic-body
                 position="0 1.764 0">
         </a-entity>
@@ -20,7 +21,7 @@
         <!-- Sky -->
         <a-sky color="#ECECEC"></a-sky>
         <!-- fix static body Wall collider -->      
-        <a-entity scale="0.02 0.02 0.02" obj-model="obj: #room-obj; mtl: room-mtl"></a-entity>
+        <a-entity scale="0.02 0.02 0.02" obj-model="obj: #room-obj; mtl: room-mtl" static-body></a-entity>
         <!-- furniture -->
         <!-- Box collider -->
         <a-entity position="0 0 6">
