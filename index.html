@@ -6,15 +6,17 @@
   </head>
    <body>
     <a-scene physics="debug: true">
+      <a-assets>
+      <a-asset-item id="room-obj" src="https://mannymeadows.github.io/Noosa/models/Walls-test.obj"></a-asset-item>
+      <a-asset-item id="room-mtl" src="https://mannymeadows.github.io/Noosa/models/Walls-test.mtl"></a-asset-item>
+      </a-assets>
         <!-- Player -->
         <!-- Floor -->
         <a-plane rotation="-90 0 0" width="54" height="54" color="#e2c5c9"></a-plane>
         <!-- Sky -->
         <a-sky color="#ECECEC"></a-sky>
         <!-- fix static body Wall collider -->      
-        <a-obj-model static-body src="https://mannymeadows.github.io/Noosa/models/shop-walls.obj" 
-                     mtl="https://mannymeadows.github.io/Noosa/models/shop-walls.mtl" 
-                     scale="0.02 0.02 0.02"></a-obj-model>
+        <a-entity static-body scale="0.02 0.02 0.02" obj-model="obj: #room-obj; mtl: room-mtl"></a-entity>
         <!-- furniture -->
         <!-- Box collider -->
     </a-scene>
