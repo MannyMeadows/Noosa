@@ -6,6 +6,7 @@
    <body>
     <a-scene physics>
       <a-assets>
+      <img id="sky" src="https://mannymeadows.github.io/Noosa/models/pan-test.jpg">
       <a-asset-item id="room-obj" src="https://mannymeadows.github.io/Noosa/models/shop-walls.obj"></a-asset-item>
       <a-asset-item id="stool-obj" src="https://mannymeadows.github.io/Noosa/models/riva1920_onelove_obj.obj"></a-asset-item>
       <a-asset-item id="stool-mtl" src="https://mannymeadows.github.io/Noosa/models/riva1920_onelove_obj.mtl"></a-asset-item>
@@ -20,7 +21,7 @@
         <!-- Floor -->
         <a-plane rotation="-90 0 0" width="54" height="54" color="#e2c5c9" static-body></a-plane>
         <!-- Sky -->
-        <a-sky color="#ECECEC"></a-sky>
+        <a-sky src="#sky"></a-sky>
         <!-- Wall collider -->      
         <a-entity static-body obj-model="obj: #room-obj"></a-entity>
         <!-- furniture -->
