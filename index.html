@@ -11,11 +11,7 @@
       <a-asset-item id="room-mtl" src="https://mannymeadows.github.io/Noosa/models/shop-walls.mtl"></a-asset-item>
       </a-assets>
         <!-- Player -->
-        <a-entity camera                
-                universal-controls
-                kinematic-body
-                position="0 1.764 0">
-        </a-entity>
+        <a-entity camera look-controls></a-entity>
         <!-- Floor -->
         <a-plane rotation="-90 0 0" width="54" height="54" color="#e2c5c9" static-body></a-plane>
         <!-- Sky -->
@@ -24,9 +20,6 @@
         <a-entity obj-model="obj: #room-obj; mtl: room-mtl" static-body></a-entity>
         <!-- furniture -->
         <!-- Box collider -->
-        <a-entity position="0 0 6">
-        <a-camera></a-camera>
-      </a-entity>
     </a-scene>
   </body>
 </html>
