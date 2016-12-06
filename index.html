@@ -6,13 +6,13 @@
     <script src="keyboard-controls.js"></script>
   </head>
    <body>
-    <a-scene physics>
+    <a-scene physics="debug: true">
       <a-assets>
       <a-asset-item id="room-obj" src="https://mannymeadows.github.io/Noosa/models/shop-walls.obj"></a-asset-item>
       <a-asset-item id="room-mtl" src="https://mannymeadows.github.io/Noosa/models/shop-walls.mtl"></a-asset-item>
       </a-assets>
         <!-- Player -->
-        <a-entity camera keyboard-controls></a-entity>
+        <a-entity camera></a-entity>
         <!-- Floor -->
         <a-plane rotation="-90 0 0" width="54" height="54" color="#e2c5c9" static-body></a-plane>
         <!-- Sky -->
