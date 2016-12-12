@@ -9,10 +9,14 @@
     <a-scene physics>
       <a-assets>
         <img id="sky" src="https://mannymeadows.github.io/Noosa/models/pano-test.jpg">
-        <a-asset-item id="room-obj" src="https://mannymeadows.github.io/Noosa/models/Walls-test.obj"></a-asset-item>
+        <a-asset-item id="room-obj" src="https://mannymeadows.github.io/Noosa/models/Walls-test.obj">          
+        </a-asset-item>
         <a-asset-item id="walls-dae" src="https://mannymeadows.github.io/Noosa/models/Pandora-shop.DAE"></a-asset-item>
-        <a-asset-item id="stool-obj" src="https://mannymeadows.github.io/Noosa/models/riva1920_onelove_obj.obj"></a-asset-item>
-        <a-asset-item id="stool-mtl" src="https://mannymeadows.github.io/Noosa/models/riva1920_onelove_obj.mtl"></a-asset-item>
+        <a-asset-item id="signs-dae" src="https://mannymeadows.github.io/Noosa/models/Pandora-signs.DAE"></a-asset-item>
+        <a-asset-item id="stool-obj" src="https://mannymeadows.github.io/Noosa/models/riva1920_onelove_obj.obj">
+        </a-asset-item>
+        <a-asset-item id="stool-mtl" src="https://mannymeadows.github.io/Noosa/models/riva1920_onelove_obj.mtl">
+        </a-asset-item>
       </a-assets>
       <!-- Player -->
       <a-entity camera universal-controls look-controls kinematic-body position="0 1.764 0">
@@ -23,6 +27,7 @@
       <a-sky src="#sky"></a-sky>
       <!-- Wall collider -->
       <a-entity collada-model="#walls-dae" static-body></a-entity>
+      <a-entity collada-model="#signs-dae" static-body></a-entity>
       <!-- furniture -->
       <a-entity static-body scale="0.05 0.05 0.05" rotation="-90 0 0" position="0 0 -5" obj-model="obj: #stool-obj; mtl: #stool-mtl">
       </a-entity>
