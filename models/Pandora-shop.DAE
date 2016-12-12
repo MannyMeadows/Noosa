@@ -2,8 +2,8 @@
 <COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
   <asset><contributor><author></author><authoring_tool>FBX COLLADA exporter</authoring_tool><comments></comments></contributor><created>2016-12-12T08:59:39Z</created><keywords></keywords><modified>2016-12-12T08:59:39Z</modified><revision></revision><subject></subject><title></title><unit meter="0.010000" name="centimeter"></unit><up_axis>Y_UP</up_axis></asset>
   <library_images>
-    <image id="Map #22-image" name="Map #22"><init_from>file://C:\Users\Mark\Google Drive\CAD\VIS\Pandora project\textures\Floor Generic Floor - 200 _323099_DiffuseMap.jpg</init_from></image>
-    <image id="Map #23-image" name="Map #23"><init_from>file://C:\Users\Mark\Google Drive\CAD\VIS\Pandora project\textures\Pandora logo-small Custom Made Joinery _387790_DiffuseMap.jpg</init_from></image>
+    <image id="Map #22-image" name="Map #22"><init_from>file:https://mannymeadows.github.io/Noosa/models/Floor Generic Floor - 200 _323099_DiffuseMap.jpg</init_from></image>
+    <image id="Map #23-image" name="Map #23"><init_from>file:https://mannymeadows.github.io/Noosa/models/Pandora logo-small Custom Made Joinery _387790_DiffuseMap.jpg</init_from></image>
   </library_images>
   <library_materials>
     <material id="_07 - Default" name="_07 - Default">
