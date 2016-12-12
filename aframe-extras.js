@@ -4253,8 +4253,8 @@ module.exports = {
 
   schema: {
     mass:           { default: 5 },
-    radius:         { default: 1.3 },
-    height:         { default: 1.764 },
+    radius:         { default: 1.1 },
+    height:         { default: 1.6 },
     linearDamping:  { default: 0.05 },
     enableSlopes:   { default: true }
   },
