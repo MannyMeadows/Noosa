@@ -8,29 +8,55 @@
   <body>
     <a-scene physics>
       <a-assets>
-        <img id="sky" src="https://mannymeadows.github.io/Noosa/models/pano-test.jpg">
-        <a-asset-item id="room-obj" src="https://mannymeadows.github.io/Noosa/models/Walls-test.obj">          
-        </a-asset-item>
-        <a-asset-item id="walls-dae" src="https://mannymeadows.github.io/Noosa/models/Pandora-shop.DAE"></a-asset-item>
-        <a-asset-item id="signs-dae" src="https://mannymeadows.github.io/Noosa/models/Pandora-signs.DAE"></a-asset-item>
-        <a-asset-item id="stool-obj" src="https://mannymeadows.github.io/Noosa/models/riva1920_onelove_obj.obj">
-        </a-asset-item>
-        <a-asset-item id="stool-mtl" src="https://mannymeadows.github.io/Noosa/models/riva1920_onelove_obj.mtl">
-        </a-asset-item>
+        <img id="my-image1" src="https://mannymeadows.github.io/Noosa/models/kath1.png">
+        <img id="my-image2" src="https://mannymeadows.github.io/Noosa/models/kath3.jpg">
+        <img id="my-image3" src="https://mannymeadows.github.io/Noosa/models/kath4.jpg">
+        <img id="my-image4" src="https://mannymeadows.github.io/Noosa/models/kath12.png">
+        <img id="my-image5" src="https://mannymeadows.github.io/Noosa/models/kath6.jpg">
+        <img id="my-image6" src="https://mannymeadows.github.io/Noosa/models/kath7.jpg">
+        <img id="my-image7" src="https://mannymeadows.github.io/Noosa/models/kath8.jpg">
+        <img id="my-image8" src="https://mannymeadows.github.io/Noosa/models/kath9.jpg">
+        <img id="my-image9" src="https://mannymeadows.github.io/Noosa/models/kath10.jpg">
+        <img id="my-image10" src="https://mannymeadows.github.io/Noosa/models/kath11.jpg">
+        <img id="my-image11" src="https://mannymeadows.github.io/Noosa/models/kath13.jpg">
+        <img id="my-image12" src="https://mannymeadows.github.io/Noosa/models/kaija-madz-kaija.jpg">
+        <img id="floor" src="https://mannymeadows.github.io/Noosa/models/Seamless marble texture.jpg">
+        <a-asset-item id="walls-dae" src="https://mannymeadows.github.io/Noosa/models/Gallery.DAE"></a-asset-item>
+        <a-asset-item id="light-obj" src="https://mannymeadows.github.io/Noosa/models/light.obj"></a-asset-item>
+        <a-asset-item id="light-mtl" src="https://mannymeadows.github.io/Noosa/models/light.mtl"></a-asset-item>
+        <a-asset-item id="frame-obj" src="https://mannymeadows.github.io/Noosa/models/Frame.obj"></a-asset-item>
+        <a-asset-item id="frame-mtl" src="https://mannymeadows.github.io/Noosa/models/Frame.mtl"></a-asset-item>
       </a-assets>
       <!-- Player -->
-      <a-entity camera universal-controls look-controls kinematic-body position="0 1.6 0">
+      <a-entity camera universal-controls="rotationControls: custom mouse;" look-controls kinematic-body position="2 1.6 2" rotation="0 90 0">
       </a-entity>
       <!-- Floor -->
-      <a-plane rotation="-90 0 0" position="0 -0.05 0" width="54" height="54" color="green" static-body></a-plane>
+      <a-plane rotation="-90 0 0" position="-2.9 0.01 1.9" width="15" height="15" material="src: #floor; repeat: 20 20" static-body></a-plane>
+      <!-- Ceiling -->
+      <a-plane rotation="90 0 0" position="-2.9 3 1.9" width="15" height="15" material="src: #floor; repeat: 20 20"></a-plane>
       <!-- Sky -->
-      <a-sky src="#sky"></a-sky>
       <!-- Wall collider -->
       <a-entity collada-model="#walls-dae" static-body></a-entity>
       <!-- furniture -->
-      <a-entity static-body scale="0.05 0.05 0.05" rotation="-90 0 0" position="0 0 -5" obj-model="obj: #stool-obj; mtl: #stool-mtl">
-      </a-entity>
+      <a-entity obj-model="obj: #frame-obj; mtl: #frame-mtl"></a-entity>
+      <a-sphere color="yellow" radius="0.5" position="-3 0.6 2" dynamic-body></a-sphere>
+      <a-entity obj-model="obj: #light-obj; mtl: #light-mtl" position="-10.05 -0.4 2.95" scale="2 2 2"></a-entity>
+      <!-- photos -->
+      <a-plane src="#my-image12" height="2" width="3.8" position="4.57 1.49 2" rotation="0 -90 0"></a-plane>
+      <a-box src="#my-image1" position="-7.5 1.5 4.5" rotation="0 90 0" depth="3.9" height="2.28" width="0.05"></a-box>
+      <a-box src="#my-image2" position="-7.5 1.5 -0.38" rotation="0 90 0" depth="3.9" height="2.28" width="0.05"></a-box>
+      <a-box src="#my-image3" position="2.2 1.5 -0.38" rotation="0 90 0" depth="3.9" height="2.28" width="0.05"></a-box>
+      <a-box src="#my-image4" position="2.2 1.5 4.5" rotation="0 90 0" depth="3.9" height="2.28" width="0.05"></a-box>
+      <a-box src="#my-image5" position="-0.25 1.5 -2.8" rotation="0 0 0" depth="3.9" height="2.28" width="0.05"></a-box>
+      <a-box src="#my-image6" position="-5.15 1.5 -2.8" rotation="0 0 0" depth="3.9" height="2.28" width="0.05"></a-box>
+      <a-box src="#my-image7" position="-5.15 1.5 7" rotation="0 0 0" depth="3.9" height="2.28" width="0.05"></a-box>
+      <a-box src="#my-image8" position="-0.25 1.5 7" rotation="0 0 0" depth="3.9" height="2.28" width="0.05"></a-box>
+      <a-box src="#my-image9" position="-2.6 1.5 9.35" rotation="0 90 0" depth="3.9" height="2.28" width="0.05"></a-box>
+      <a-box src="#my-image10" position="-2.6 1.5 -5.2" rotation="0 90 0" depth="3.9" height="2.28" width="0.05"></a-box>
+      <a-box src="#my-image11" position="-9.98 1.5 2" rotation="0 0 0" depth="3.9" height="2.28" width="0.05"></a-box>
       <!-- Lights -->
+      <a-entity light="type: ambient; intensity: 0.75; color: #CCC"></a-entity>
+      <a-entity light="type: point; intensity: 1; distance: 50; decay: 2" position="-2.6 1.7 2.1"></a-entity>
     </a-scene>
   </body>
 
