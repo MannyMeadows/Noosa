@@ -2,7 +2,7 @@
 <COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
   <asset><contributor><author></author><authoring_tool>FBX COLLADA exporter</authoring_tool><comments></comments></contributor><created>2016-12-28T11:44:52Z</created><keywords></keywords><modified>2016-12-28T11:44:52Z</modified><revision></revision><subject></subject><title></title><unit meter="0.010000" name="centimeter"></unit><up_axis>Y_UP</up_axis></asset>
   <library_images>
-    <image id="Map #75-image" name="Map #75"><init_from>https://mannymeadows.github.io/Noosa/models/Noosa-walls.png</init_from></image>
+    <image id="Map #75-image" name="Map #75"><init_from>../Noosa-walls.png</init_from></image>
   </library_images>
   <library_materials>
     <material id="_01 - Default" name="_01 - Default">
