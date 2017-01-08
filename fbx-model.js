@@ -1,4 +1,4 @@
-THREE.FBXLoader = require('https://mannymeadows.github.io/Noosa/FBXLoader');
+THREE.FBXLoader = require('../Noosa/FBXLoader');
 
 /**
  * fbx-model
