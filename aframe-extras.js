@@ -3611,7 +3611,7 @@ module.exports = {
     movementControls:     { default: ['gamepad', 'keyboard', 'touch', 'hmd'] },
     rotationEnabled:      { default: true },
     rotationControls:     { default: ['hmd', 'gamepad', 'mouse'] },
-    movementSpeed:        { default: 5 }, // m/s
+    movementSpeed:        { default: 3 }, // m/s
     movementEasing:       { default: 15 }, // m/s2
     movementAcceleration: { default: 80 }, // m/s2
     rotationSensitivity:  { default: 0.05 }, // radians/frame, ish
