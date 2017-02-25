@@ -7,11 +7,11 @@
 <body>
     <a-scene artoolkit="detectionMode: mono_matrix; sourceType: webcam;">
       <a-assets>
-	<a-asset-item id="rick" src="https://mannymeadows.github.io/Noosa/models/Rick.JD"></a-asset-item>
+	<a-asset-item id="rick-obj" src="https://mannymeadows.github.io/Noosa/models/Rick.obj"></a-asset-item>
+    	<a-asset-item id="rick-mtl" src="https://mannymeadows.github.io/Noosa/models/Rick.mtl"></a-asset-item>
       </a-assets>
       <a-marker type="pattern" url="https://mannymeadows.github.io/Noosa/models/patt.kanji">
-        <a-entity json-model="src: #rick"></a-entity>
-	      <a-cube color="tomato" depth="2" height="4" width="0.5"></a-cube>
+        <a-entity scale="0.9 0.9 0.9" obj-model="obj: #rick-obj; mtl: #rick-mtl"></a-entity>
       </a-marker>
       
       <a-entity camera></a-entity>
