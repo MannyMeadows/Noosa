@@ -5,7 +5,7 @@
 <script src="https://mannymeadows.github.io/Noosa/aframe-ar.js"></script>
 </head>
 <body>
-    <a-scene artoolkit="detectionMode: mono_matrix; sourceType: webcam;">
+    <a-scene artoolkit="detectionMode: mono; sourceType: webcam;">
       <a-assets>
 	<a-asset-item id="rick-obj" src="https://mannymeadows.github.io/Noosa/models/Rick.obj"></a-asset-item>
     	<a-asset-item id="rick-mtl" src="https://mannymeadows.github.io/Noosa/models/Rick.mtl"></a-asset-item>
@@ -14,9 +14,7 @@
 	<a-box depth="1" height="1" width="1" position='0 0 0.5' material='opacity: 0.5; side:double'></a-box>
         <a-entity scale="0.9 0.9 0.9" obj-model="obj: #rick-obj; mtl: #rick-mtl"></a-entity>
       </a-marker>
-      
       <a-entity camera></a-entity>
-
     </a-scene>
 </body>
 </html>
