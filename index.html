@@ -1,20 +1,18 @@
 <html>
-
 <head>
 <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
 <script src="https://mannymeadows.github.io/Noosa/aframe-extras.js"></script>
 <script src="https://jeromeetienne.github.io/AR.js/aframe/aframe-ar.js"></script>
 </head>
 <body>
-    <a-scene artoolkit='sourceType: webcam; cameraParametersUrl: https://rawgit.com/jeromeetienne/WebAR/master/data/data/camera_para.dat'>
+    <a-scene embedded artoolkit='sourceType: webcam; cameraParametersUrl: https://rawgit.com/jeromeetienne/WebAR/master/data/data/camera_para.dat'>
       <a-assets>
-			<a-asset-item id="rick" src="https://mannymeadows.github.io/Noosa/models/Rick.JD"></a-asset-item>
-		  </a-assets>
+	<a-asset-item id="rick" src="https://mannymeadows.github.io/Noosa/models/Rick.JD"></a-asset-item>
+      </a-assets>
       <a-marker type='pattern' url='https://mannymeadows.github.io/Noosa/models/Kanji pattern.pdf'>
         <a-entity json-model="src: #rick"></a-entity>        
       </a-marker>
       
-        
       <a-entity camera></a-entity>
 
     </a-scene>
