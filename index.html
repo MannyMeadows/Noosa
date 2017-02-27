@@ -6,11 +6,40 @@
 <body>
     <a-scene artoolkit="sourceType: webcam; cameraParametersUrl: https://mannymeadows.github.io/Noosa/camera_para.dat">
       <a-assets>
-	    <a-asset-item id="rick-obj" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/867169/Walls-AR.obj"></a-asset-item>
+	<a-asset-item id="walls-obj" src="https://mannymeadows.github.io/Noosa/models/Noosa-walls.obj"></a-asset-item>
+        <a-asset-item id="walls-mtl" src="https://mannymeadows.github.io/Noosa/models/Noosa-walls.mtl"></a-asset-item>
+        <img id="wallsAO" src="https://mannymeadows.github.io/Noosa/models/Walls AO.jpg">
+        <a-asset-item id="floor-obj" src="https://mannymeadows.github.io/Noosa/models/Floor.obj"></a-asset-item>
+        <img id="wood" src="https://mannymeadows.github.io/Noosa/models/TexturesCom_WoodFine0032_1_seamless_S.png">
+        <a-asset-item id="floor-mtl" src="https://mannymeadows.github.io/Noosa/models/Floor.mtl"></a-asset-item>
+        <a-asset-item id="glazing-obj" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/867169/glazing.obj"></a-asset-item>
+        <a-asset-item id="glazing-mtl" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/867169/glazing.mtl"></a-asset-item>
+        <a-asset-item id="sliding-obj" src="https://mannymeadows.github.io/Noosa/models/sliding-doors.obj"></a-asset-item>
+        <a-asset-item id="sliding-mtl" src="https://mannymeadows.github.io/Noosa/models/sliding-doors.mtl"></a-asset-item>
+        <a-asset-item id="roof-obj" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/867169/Roof.obj"></a-asset-item>
+        <a-asset-item id="roof-mtl" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/867169/Roof.mtl"></a-asset-item>
+        <a-asset-item id="benchtops-obj" src="https://mannymeadows.github.io/Noosa/models/benchtops.obj"></a-asset-item>
+        <a-asset-item id="benchtops-mtl" src="https://mannymeadows.github.io/Noosa/models/benchtops.mtl"></a-asset-item>
+        <a-asset-item id="cabinetry-obj" src="https://mannymeadows.github.io/Noosa/models/cabinetry.obj"></a-asset-item>
+        <img id="charcoal" src="https://mannymeadows.github.io/Noosa/models/charcoal.png">
+        <a-asset-item id="doors-obj" src="https://mannymeadows.github.io/Noosa/models/doors.obj"></a-asset-item>
+        <a-asset-item id="steel-obj" src="https://mannymeadows.github.io/Noosa/models/stainless_steel.obj"></a-asset-item>
+        <a-asset-item id="steel-mtl" src="https://mannymeadows.github.io/Noosa/models/stainless_steel.mtl"></a-asset-item>
+        <img id="steel" src="https://mannymeadows.github.io/Noosa/models/stainless steel.jpg">
     	<a-asset-item id="rick-mtl" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/867169/Walls-AR.mtl"></a-asset-item>
       </a-assets>
       <a-marker type="pattern" url="https://mannymeadows.github.io/Noosa/models/patt.kanji" size="1">
-      <a-entity scale="0.1 0.1 0.1" position="0 0 0" rotation="90 0 0" obj-model="obj: #rick-obj; mtl: #rick-mtl"></a-entity>
+      <!-- Floor -->
+      <a-obj-model rotation="180 0 0" scale="0.1 0.2 0.1" src="#floor-obj" material="src: #wood; repeat: 10 10"></a-obj-model>
+      <!-- Ceiling -->
+      <a-obj-model rotation="180 0 0" scale="0.1 0.2 0.1" src="#roof-obj" mtl="#roof-mtl"></a-obj-model>
+      <!-- Windows -->
+      <a-obj-model rotation="180 0 0" scale="0.1 0.2 0.1" src="#glazing-obj" mtl="#glazing-mtl"></a-obj-model>
+      <a-obj-model rotation="180 0 0" scale="0.1 0.2 0.1" src="#sliding-obj" mtl="#sliding-mtl"></a-obj-model>
+      <!-- doors -->
+      <a-obj-model rotation="180 0 0" scale="0.1 0.2 0.1" src="#doors-obj" material="src: #wall-tex"></a-obj-model>
+      <!-- Wall collider -->
+      <a-entity rotation="180 0 0" scale="0.1 0.2 0.1" obj-model="obj: #walls-obj" material="color: #F0EAD6; src: #wallsAO"></a-entity>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
