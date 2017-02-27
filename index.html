@@ -4,7 +4,7 @@
 <script src="https://mannymeadows.github.io/Noosa/aframe-ar.js"></script>
 </head>
 <body>
-    <a-scene artoolkit="sourceType: webcam; cameraParametersUrl: https://mannymeadows.github.io/Noosa/camera_para.dat">
+    <a-scene embedded artoolkit="sourceType: webcam; cameraParametersUrl: https://mannymeadows.github.io/Noosa/camera_para.dat">
       <a-assets>
 	<a-asset-item id="walls-obj" src="https://mannymeadows.github.io/Noosa/models/Noosa-walls.obj"></a-asset-item>
         <a-asset-item id="walls-mtl" src="https://mannymeadows.github.io/Noosa/models/Noosa-walls.mtl"></a-asset-item>
@@ -32,7 +32,7 @@
       <!-- Floor -->
       <a-obj-model rotation="90 0 0" scale="0.1 0.1 0.1" src="#floor-obj" material="src: #wood; repeat: 10 10"></a-obj-model>
       <!-- Ceiling -->
-      <a-obj-model rotation="90 0 0" scale="0.1 0.1 0.1" src="#roof-obj" material="color:#274D4D"></a-obj-model>
+      <a-obj-model rotation="90 0 0" scale="0.1 0.1 0.1" src="#roof-obj" material="color:#003030"></a-obj-model>
       <!-- Windows -->
       <a-obj-model rotation="90 0 0" scale="0.1 0.1 0.1" src="#glazing-obj" mtl="#glazing-mtl"></a-obj-model>
       <a-obj-model rotation="90 0 0" scale="0.1 0.1 0.1" src="#sliding-obj" mtl="#sliding-mtl"></a-obj-model>
