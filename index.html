@@ -1,0 +1,18 @@
+<html>
+<head>
+<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+<script src="https://mannymeadows.github.io/Noosa/aframe-ar.js"></script>
+</head>
+<body>
+    <a-scene artoolkit="sourceType: webcam; cameraParametersUrl: https://mannymeadows.github.io/Noosa/camera_para.dat">
+      <a-assets>
+	    <a-asset-item id="rick-obj" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/867169/Walls-AR.obj"></a-asset-item>
+    	<a-asset-item id="rick-mtl" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/867169/Walls-AR.mtl"></a-asset-item>
+      </a-assets>
+      <a-marker type="pattern" url="https://mannymeadows.github.io/Noosa/models/patt.kanji" size="1">
+      <a-entity scale="0.1 0.1 0.1" position="0 0 0" rotation="90 0 0" obj-model="obj: #rick-obj; mtl: #rick-mtl"></a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+</body>
+</html>
