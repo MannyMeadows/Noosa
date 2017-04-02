@@ -12,28 +12,24 @@
           var sceneEl = document.querySelector('a-scene');
           var firstCameraEl = sceneEl.querySelector('#first-camera');
           var secondCameraEl = sceneEl.querySelector('#second-camera');
-            firstCameraEl.setAttribute('camera', 'active', true);
-            firstCameraEl.setAttribute('universal-controls', 'enabled', true);
-            firstCameraEl.setAttribute('look-controls', 'enabled', true);
-            firstEl.addEventListener('click', function () { 
-            firstCameraEl.setAttribute('camera', 'active', true);
-            }                    
-          );
+          	firstCameraEl.setAttribute('camera', 'active', true);
           	secondEl.addEventListener('click', function () {
             secondCameraEl.setAttribute('camera', 'active', true);
-          }                    
+            }                    
+          );
+          	firstEl.addEventListener('click', function () {
+            firstCameraEl.setAttribute('camera', 'active', true);
+          }
           );
         }
       }); 
 </script>
 </head>
-<body>
 <div class="container">
 	<a href="#first-camera" id="first">Walk</a>
 	<a href="#second-camera" id="second">Orbit</a>
-  <a href="#AR-camera" id="third">AR</a>
-</div>	
-
+</div>
+<body>
     <a-scene physics camera-switch>
       <a-assets>
         <a-asset-item id="walls-dae" src="https://mannymeadows.github.io/Noosa/models/Noosa-walls.DAE"></a-asset-item>
@@ -41,15 +37,13 @@
         <img id="sprite" src="https://mannymeadows.github.io/Noosa/models/one-finger-icon.png">
       </a-assets>
       <!-- Camera 1 -->
-
-      <a-entity id="first-camera" camera="active: true" universal-controls="rotationControls: custom, mouse; movementAcceleration: 20;" universal-controls="pointerlockEnabled"
-      look-controls kinematic-body position="2 1.6 2" rotation="0 90 0">
+      <a-entity camera look-controls universal-controls="rotationControls: custom, mouse; movementAcceleration: 20;" 
+          universal-controls="pointerlockEnabled" kinematic-body position="2 1.6 2" rotation="0 90 0" id="first-camera">
           <a-entity cursor
           position="0 0 -0.2"
           geometry="primitive: sphere; radius: 0.005"
           material="color: white; shader: flat; opacity: 0.2">
           </a-entity>
-
       </a-entity>
 
       <a-entity
@@ -65,7 +59,8 @@
                 minDistance:15;
                 maxDistance:45;
                 minPolarAngle:0.7;
-                maxPolarAngle:1.5;"
+                maxPolarAngle:1.5;
+                zoomSpeed:0.5"
                 mouse-cursor="">
         </a-entity>
 
@@ -78,5 +73,4 @@
       <a-sprite position="0 1 0" resize="0.5 0.5 0.5" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/867169/one-finger-icon.png">
       </a-sprite>
    </a-scene>
-    
 </body>
