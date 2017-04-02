@@ -13,6 +13,8 @@
           var firstCameraEl = sceneEl.querySelector('#first-camera');
           var secondCameraEl = sceneEl.querySelector('#second-camera');
             firstCameraEl.setAttribute('camera', 'active', true);
+            firstCameraEl.setAttribute('universal-controls', 'enabled', true);
+            firstCameraEl.setAttribute('look-controls', 'enabled', true);
             firstEl.addEventListener('click', function () { 
             firstCameraEl.setAttribute('camera', 'active', true);
             }                    
