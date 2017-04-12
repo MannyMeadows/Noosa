@@ -196,14 +196,6 @@
 	    },
 
 	    /**
-	     * Called when entity pauses.
-	     * Use to stop or remove any dynamic or background behavior such as events.
-	     */
-	    pause: function() {
-	        this.removeEventListeners();
-	    },
-
-	    /**
 	     * Called when entity resumes.
 	     * Use to continue or add any dynamic or background behavior such as events.
 	     */
