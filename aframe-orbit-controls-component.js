@@ -285,7 +285,6 @@
 
 
 	    removeEventListeners: function() {
-	        this.canvasEl.removeEventListener('mousedown', this.onMouseDown, false);
 	        this.canvasEl.removeEventListener('mousewheel', this.onMouseWheel, false);
 	        this.canvasEl.removeEventListener('MozMousePixelScroll', this.onMouseWheel, false); // firefox
 
