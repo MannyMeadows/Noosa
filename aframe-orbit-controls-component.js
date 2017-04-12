@@ -277,8 +277,6 @@
 
 
 	    removeEventListeners: function() {
-	        this.canvasEl.removeEventListener('MozMousePixelScroll', this.onMouseWheel, false); // firefox
-
 	        this.canvasEl.removeEventListener('touchstart', this.onTouchStart, false);
 	        this.canvasEl.removeEventListener('touchend', this.onTouchEnd, false);
 	        this.canvasEl.removeEventListener('touchmove', this.onTouchMove, false);
